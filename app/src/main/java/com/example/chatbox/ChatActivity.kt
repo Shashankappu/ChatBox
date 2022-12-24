@@ -29,7 +29,7 @@ class ChatActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
-        Log.d("clickevent","Working good")
+
 
         mDbRef = FirebaseDatabase.getInstance().reference
         chatRecyclerView = findViewById(R.id.chatRv)
@@ -85,7 +85,6 @@ class ChatActivity : AppCompatActivity() {
             }
             messageBox.text.clear()
         }
-        Log.d("clickevent","Working good")
 
     }
 
