@@ -1,12 +1,14 @@
 package com.example.chatbox
 
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import android.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
@@ -23,10 +25,12 @@ class ChatActivity : AppCompatActivity() {
     var receiverRoom : String? = null
     var senderRoom : String? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
         Log.d("clickevent","Working good")
+
         mDbRef = FirebaseDatabase.getInstance().reference
         chatRecyclerView = findViewById(R.id.chatRv)
         messageBox  = findViewById(R.id.messageBox)
@@ -40,7 +44,7 @@ class ChatActivity : AppCompatActivity() {
         senderRoom = receiverUid + senderUid
         receiverRoom = senderUid + receiverUid
 
-        supportActionBar?.title = name
+
         messageList = ArrayList()
         messageAdapter = MessageAdapter(this,messageList)
 
