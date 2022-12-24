@@ -1,14 +1,13 @@
 package com.example.chatbox
 
 
-import android.annotation.SuppressLint
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
@@ -40,7 +39,7 @@ class ChatActivity : AppCompatActivity() {
         val receiverUid = intent.getStringExtra("uid")
 
         val senderUid = FirebaseAuth.getInstance().currentUser?.uid
-
+        supportActionBar?.title = name
         senderRoom = receiverUid + senderUid
         receiverRoom = senderUid + receiverUid
 
